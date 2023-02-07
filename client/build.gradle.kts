@@ -40,6 +40,7 @@ dependencies {
     implementation("com.google.protobuf:protobuf-kotlin:$grpcVersion")
     implementation("com.google.protobuf:protobuf-java-util:3.21.10")
     implementation("io.grpc:grpc-stub:$grpcProtoVersion")
+    implementation("io.grpc:grpc-netty:$grpcProtoVersion")
 }
 
 // build 후 Stub 클래스가 생성되는 타겟 설정
