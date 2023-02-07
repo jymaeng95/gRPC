@@ -29,5 +29,6 @@ class GrpcServer(private val apiRegisterService: ApiRegisterService) {
      */
     fun callApiRegister() {
         server.awaitTermination()
+        logger.info("gRPC Server call function success")
     }
 }

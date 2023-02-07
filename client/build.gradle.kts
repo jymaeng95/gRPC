@@ -31,6 +31,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+    // WebClient를 위해
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+
     // kotlin 로그찍기
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.23")
 

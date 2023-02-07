@@ -8,10 +8,16 @@ import mu.KotlinLogging
 import org.springframework.stereotype.Service
 
 @Service
+// /build/generated/.../grpc 하위의 클래스를 import해서 구현
 class ApiRegisterService : ApiRegisterServiceGrpc.ApiRegisterServiceImplBase() {
 
+    // 로깅
     private val logger = KotlinLogging.logger {  }
 
+    /**
+     * 실제 gRPC를 통해서 호출되는 함수 (proto 파일에 정의한 service 명과 동일)
+     * 함수를 오버라이딩해서 실제 서비스를 구현
+     */
     override fun registerApiKey(request: RegisterRequest?, responseObserver: StreamObserver<RegisterResponse>?) {
         logger.info("[gRPC Request] Call ApiRegisterService : ${request?.toString()}")
 

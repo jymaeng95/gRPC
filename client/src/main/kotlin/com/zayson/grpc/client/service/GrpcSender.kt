@@ -9,7 +9,7 @@ import mu.KotlinLogging
 import org.springframework.stereotype.Service
 
 @Service
-class GrpcSender(client: GrpcClientConfig) {
+class GrpcSender(private val client: GrpcClientConfig) {
     private val logger = KotlinLogging.logger { }
     private val stub = ApiRegisterServiceGrpc.newBlockingStub(client.grpcClient())
 

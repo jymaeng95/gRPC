@@ -29,5 +29,4 @@ class CubeApi(private val grpcSender: GrpcSender) {
         logger.info("Response : ${response.message}")
         return ResponseEntity.status(HttpStatus.CREATED).body(CommonResponse.create(response.message))
     }
-
 }
