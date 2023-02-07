@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zayson.grpc.server.proto";
+option java_outer_classname = "ApiRegisterProto";
+
+service ApiRegisterService {
+  rpc RegisterApiKey (RegisterRequest) returns (RegisterResponse);  // 일반적인 Message 형태로 단일 요청에 대한 단일 응답
+//  rpc LotsOfResponses (RegisterRequest) returns (stream RegisterResponse); // 단일 요청에 대해 Stream 형태의 응답 전달
+//  rpc LotsOfRequests (stream RegisterRequest) returns (RegisterResponse); // 클라이언트에서 서버로 Stream  형태의 요청을 보내며, 서버에서는 단일 응답 전달함
+//  rpc BiDirectRequest(stream RegisterRequest) returns (stream RegisterResponse); // 양방향으로 stream 형태의 요청과 응답을 전달함
+}
+
+message RegisterRequest {
+  string key = 1;
+  int64 id = 2;
+  string nickname = 3;
+}
+
+message RegisterResponse {
+  string message = 1;
+}
