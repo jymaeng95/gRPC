@@ -1,5 +1,9 @@
 package com.zayson.grpc.client.dto
 
-data class CommonResponse(
-    private val message:String
-)
+import org.springframework.web.bind.annotation.ResponseBody
+
+class CommonResponse private constructor(val message: String) {
+    companion object {
+        fun create(message: String) = CommonResponse(message)
+    }
+}

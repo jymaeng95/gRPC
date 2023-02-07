@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.zayson.grpc.server";
+option java_package = "com.zayson.grpc.client.proto";
 option java_outer_classname = "ApiRegisterProto";
 
 service ApiRegisterService {
@@ -13,7 +13,8 @@ service ApiRegisterService {
 
 message RegisterRequest {
   string key = 1;
-  string id = 2;
+  int64 id = 2;
+  string nickname = 3;
 }
 
 message RegisterResponse {
